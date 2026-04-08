@@ -1,68 +1,70 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
-public class UltraPerformanceManager : MonoBehaviour
+public class ProximityManagerOptimized : MonoBehaviour
 {
-    public float detectionRadius = 25f; 
+    public float detectionRadius = 10f;
     public LayerMask objectLayer;
-    [Range(1, 100)]
-    public int checksPerFrame = 10; // Hoeveel objecten per frame verwerken
+    public float checkInterval = 0.2f; // Hoe vaak checken? (0.2 = 5 keer per seconde)
 
-    private List<GameObject> allTargetObjects = new List<GameObject>();
-    private List<Transform> allTransforms = new List<Transform>();
-    private int currentIndex = 0;
-    private float sqrRadius;
+    private List<MeshRenderer> activeRenderers = new List<MeshRenderer>();
 
-    void Awake()
+    void Start()
     {
-        sqrRadius = detectionRadius * detectionRadius;
-
-        // We zoeken alle objecten op de specifieke laag.
-        // LET OP: Doe dit alleen als de objecten aan staan bij het starten!
-        GameObject[] objects = GameObject.FindObjectsOfType<GameObject>(true);
-        foreach (GameObject obj in objects)
+        // 1. Zoek bij de start EENMALIG alle relevante objecten en zet ze uit
+        // Dit voorkomt lag tijdens het lopen
+        GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
+        foreach (GameObject obj in allObjects)
         {
             if (((1 << obj.layer) & objectLayer) != 0)
             {
-                allTargetObjects.Add(obj);
-                allTransforms.Add(obj.transform);
-                
-                // We forceren ze uit bij de start (behalve als ze heel dichtbij zijn)
-                float dist = (transform.position - obj.transform.position).sqrMagnitude;
-                obj.SetActive(dist < sqrRadius);
+                MeshRenderer rend = obj.GetComponent<MeshRenderer>();
+                if (rend != null) rend.enabled = false;
             }
+        }
+
+        // 2. Start de herhalende check
+        StartCoroutine(ProximityCheckRoutine());
+    }
+
+    IEnumerator ProximityCheckRoutine()
+    {
+        while (true)
+        {
+            PerformCheck();
+            // Wacht even voordat we de volgende check doen (bespaart CPU)
+            yield return new WaitForSeconds(checkInterval);
         }
     }
 
-    void Update()
+    void PerformCheck()
     {
-        int total = allTargetObjects.Count;
-        if (total == 0) return;
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectionRadius, objectLayer);
+        List<MeshRenderer> currentlyInView = new List<MeshRenderer>();
 
-        Vector3 playerPos = transform.position;
-
-        // We checken slechts een klein deel van de totale lijst per frame
-        for (int i = 0; i < checksPerFrame; i++)
+        // Zet nieuwe objecten aan
+        foreach (var hit in hitColliders)
         {
-            if (currentIndex >= total) currentIndex = 0;
-
-            GameObject target = allTargetObjects[currentIndex];
-            Transform t = allTransforms[currentIndex];
-
-            if (target != null)
+            MeshRenderer rend = hit.GetComponent<MeshRenderer>();
+            if (rend != null)
             {
-                float sqrDist = (playerPos - t.position).sqrMagnitude;
-                bool shouldBeActive = sqrDist < sqrRadius;
-
-                // Alleen SetActive aanroepen als de staat moet veranderen
-                // Dit voorkomt onnodige rekenkracht
-                if (target.activeSelf != shouldBeActive)
-                {
-                    target.SetActive(shouldBeActive);
-                }
+                currentlyInView.Add(rend);
+                if (!rend.enabled) rend.enabled = true;
             }
-
-            currentIndex++;
         }
+
+        // Zet oude objecten uit
+        for (int i = activeRenderers.Count - 1; i >= 0; i--)
+        {
+            MeshRenderer oldRend = activeRenderers[i];
+            if (oldRend != null && !currentlyInView.Contains(oldRend))
+            {
+                oldRend.enabled = false;
+                activeRenderers.RemoveAt(i);
+            }
+        }
+
+        activeRenderers = currentlyInView;
     }
 }
