@@ -17,17 +17,20 @@ public class StokSysteem : MonoBehaviour
         }
     }
 
-    void Tik()
+   void Tik()
     {
         RaycastHit hit;
-        // We schieten de straal vanuit de camera naar voren
-        if (Physics.Raycast(transform.position, transform.forward, out hit, tikBereik, watIsRaakbaar))
+    
+        // We maken een richting die 'vooruit' is, maar een beetje naar beneden (0.5 omlaag)
+        Vector3 richting = (transform.forward + Vector3.down * 0.5f).normalized;
+
+        if (Physics.Raycast(transform.position, richting, out hit, tikBereik, watIsRaakbaar))
         {
             lichtParticles.transform.position = hit.point;
             lichtParticles.transform.rotation = Quaternion.LookRotation(hit.normal);
             lichtParticles.Play();
-            
-            Debug.Log("Muur geraakt op: " + hit.point);
+        
+            Debug.Log("Geraakt via schuine straal: " + hit.point);
         }
-    }
+}
 }
