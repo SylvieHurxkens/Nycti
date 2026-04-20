@@ -9,16 +9,16 @@ public class MouseLookPro : MonoBehaviour
     private Vector2 lookInput;
 
     void Start()
-{
-    // Verbergt de cursor en zet hem vast in het midden van het scherm
-    Cursor.lockState = CursorLockMode.Locked;
-    Cursor.visible = false;
-}
+    {
+        // Verbergt de cursor en zet hem vast in het midden van het scherm
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
 
     // Deze methode koppel je aan de "Look" actie in je Player Input component
-    public void OnLook(InputAction.CallbackContext context)
+    public void OnLook(InputValue context)
     {
-        lookInput = context.ReadValue<Vector2>();
+        lookInput = context.Get<Vector2>();
     }
 
     void Update()

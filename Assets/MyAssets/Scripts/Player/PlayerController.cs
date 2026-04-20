@@ -5,34 +5,34 @@ public class PlayerControllerPro : MonoBehaviour
 {
     [Header("Movement")]
     public float walkSpeed = 5f;
-    public float sprintSpeed = 8f; // Nieuwe variabele voor sprintsnelheid
+    public float sprintSpeed = 8f; // 
     public float jumpHeight = 1.5f;
     public float gravity = -9.81f;
 
     [Header("References")]
     public CharacterController controller;
-    
+
     private Vector2 moveInput;
     private Vector3 velocity;
     private bool isGrounded;
-    private bool isSprinting; // Houdt bij of we sprinten
+    private bool isSprinting;
 
     // Wordt aangeroepen door de Move actie
-    public void OnMove(InputAction.CallbackContext context)
+    public void OnMove(InputValue context)
     {
-        moveInput = context.ReadValue<Vector2>();
+        moveInput = context.Get<Vector2>();
     }
 
     // Wordt aangeroepen door de Sprint actie
-    public void OnSprint(InputAction.CallbackContext context)
+    public void OnSprint(InputValue context)
     {
-        if (context.started) isSprinting = true;   // Toets ingedrukt
-        if (context.canceled) isSprinting = false; // Toets losgelaten
+        isSprinting = context.isPressed;
+
     }
 
-    public void OnJump(InputAction.CallbackContext context)
+    public void OnJump(InputValue context)
     {
-        if (context.performed && isGrounded)
+        if (isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
