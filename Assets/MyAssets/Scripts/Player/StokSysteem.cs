@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class StokSysteem : MonoBehaviour
 {
-    public ParticleSystem lichtParticles;
+public ParticleSystem lichtParticles;
 public int aantalParticles = 200;
 
     // Deze functie wordt straks aangeroepen door je Input Action
