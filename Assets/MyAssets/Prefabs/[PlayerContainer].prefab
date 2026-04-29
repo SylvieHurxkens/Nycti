@@ -272,9 +272,10 @@ GameObject:
   - component: {fileID: 5855310004631705418}
   - component: {fileID: 2795616395949046252}
   - component: {fileID: 2316285953280388548}
+  - component: {fileID: 8858794578678274838}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -539,7 +540,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5397767179224138360}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4cecc74e11ac58b4fb7a1525ebd13487, type: 3}
   m_Name: 
@@ -565,6 +566,18 @@ MonoBehaviour:
   player: {fileID: 4135084607563245908}
   soundWave: {fileID: 662580175223640419}
   aantalParticles: 70000
+--- !u!114 &8858794578678274838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5397767179224138360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe25d7b4f361eb545bbe7049d9a409e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneSaveSystem
 --- !u!1 &6143652369366275494
 GameObject:
   m_ObjectHideFlags: 0
