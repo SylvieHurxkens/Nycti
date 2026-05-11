@@ -46,7 +46,11 @@ ModelImporter:
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
+<<<<<<< HEAD
     generateSecondaryUV: 1
+=======
+    generateSecondaryUV: 0
+>>>>>>> f80d3e51207c2eb8a4b4765e91187ec578e3c753
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
