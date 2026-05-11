@@ -1,9 +1,9 @@
 using UnityEngine;
-using UnityEngine.InputSystem; // Belangrijk!
+using UnityEngine.InputSystem;
 
-public class MouseLookPro : MonoBehaviour
+public class MouseLook : MonoBehaviour
 {
-    public float mouseSensitivity = 25f;
+    public float mouseSensitivity = 2f;
     public Transform cameraTransform;
     private float xRotation = 0f;
     private Vector2 lookInput;
@@ -23,8 +23,17 @@ public class MouseLookPro : MonoBehaviour
 
     void Update()
     {
-        float mouseX = lookInput.x * mouseSensitivity * Time.deltaTime;
-        float mouseY = lookInput.y * mouseSensitivity * Time.deltaTime;
+        if (Time.timeScale == 0) 
+        {
+            return; 
+        }
+
+        //Debug.Log("Huidige Sens: " + SettingsManager.mouseSensitivity);
+
+        float currentSens = SettingsManager.mouseSensitivity;
+
+        float mouseX = lookInput.x * mouseSensitivity * currentSens * Time.deltaTime * 50f;
+        float mouseY = lookInput.y * mouseSensitivity * currentSens * Time.deltaTime * 50f;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);

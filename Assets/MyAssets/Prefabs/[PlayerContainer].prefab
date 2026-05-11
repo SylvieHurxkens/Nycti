@@ -178,7 +178,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5120447371999242389}
   m_Father: {fileID: 4135084607563245908}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5885772857044547827
@@ -256,7 +257,6 @@ MonoBehaviour:
   lichtParticles: {fileID: 607559196529020538}
   player: {fileID: 0}
   soundWave: {fileID: 0}
-  aantalParticles: 200
 --- !u!1 &5397767179224138360
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +295,6 @@ Transform:
   m_Children:
   - {fileID: 3089092930227097141}
   - {fileID: 3707588114407860766}
-  - {fileID: 5120447371999242389}
   - {fileID: 8630821927503274759}
   m_Father: {fileID: 5731643391939505041}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -518,7 +517,9 @@ MonoBehaviour:
   sprintSpeed: 8
   jumpHeight: 2
   gravity: -9.81
+  interactRange: 3
   controller: {fileID: 7688670688085513674}
+  playerCamera: {fileID: 0}
 --- !u!114 &5855310004631705418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,7 +566,6 @@ MonoBehaviour:
   lichtParticles: {fileID: 607559196529020538}
   player: {fileID: 4135084607563245908}
   soundWave: {fileID: 662580175223640419}
-  aantalParticles: 70000
 --- !u!114 &8858794578678274838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10521,7 +10521,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 4135084607563245908}
+    m_TransformParent: {fileID: 8630821927503274759}
     m_Modifications:
     - target: {fileID: 2131704450163261502, guid: 3a9565998fefa2d759233c2ad758f0a7, type: 3}
       propertyPath: m_LocalScale.y
@@ -10533,7 +10533,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2131704450163261502, guid: 3a9565998fefa2d759233c2ad758f0a7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.7000002
       objectReference: {fileID: 0}
     - target: {fileID: 2131704450163261502, guid: 3a9565998fefa2d759233c2ad758f0a7, type: 3}
       propertyPath: m_LocalPosition.z

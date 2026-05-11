@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dorp.unity
     guid: 1065ab0eb4a6eed4fa3673ac6d2ce15f
+  - enabled: 1
+    path: Assets/Scenes/DorpEinde.unity
+    guid: 8c7cb0787f1a3824c9422984e0267eec
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

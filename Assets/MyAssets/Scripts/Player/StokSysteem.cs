@@ -6,7 +6,7 @@ public class StokSysteem : MonoBehaviour
 public ParticleSystem lichtParticles;
 public Transform player;
 public SoundWave soundWave;
-public int aantalParticles = 200;
+//public int aantalParticles = 200;
 
     // Deze functie wordt straks aangeroepen door je Input Action
     public void OnTik(InputValue context)

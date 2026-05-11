@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerControllerPro : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
     public float walkSpeed = 5f;
@@ -9,8 +9,12 @@ public class PlayerControllerPro : MonoBehaviour
     public float jumpHeight = 1.5f;
     public float gravity = -9.81f;
 
+    [Header("Interaction")]
+    public float interactRange = 3f; // Hoe ver je de bel kunt raken
+
     [Header("References")]
     public CharacterController controller;
+    public Camera playerCamera; 
 
     private Vector2 moveInput;
     private Vector3 velocity;
@@ -35,6 +39,46 @@ public class PlayerControllerPro : MonoBehaviour
         if (isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
+    }
+
+    public void OnInteract(InputValue context)
+    {
+        if (context.isPressed)
+        {
+            // Schiet een straal vanuit het midden van de camera
+            Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, interactRange))
+            {
+                // Zoek naar het script op de bel (of ander interactable object)
+                var bell = hit.transform.GetComponent<BellInteraction>();
+                
+                if (bell != null)
+                {
+                    bell.OnInteract();
+                }
+            }
+        }
+    }
+
+    void Start()
+    {
+        // Check of we net uit een scène komen waar de bel geluid is
+        if (BellInteraction.moetPositieHerstellen)
+        {
+            // Zet de speler op de oude plek
+            // Let op: als je een CharacterController gebruikt, zet deze dan even uit
+            if (controller != null) controller.enabled = false;
+            
+            transform.position = BellInteraction.opgeslagenPositie;
+            transform.rotation = BellInteraction.opgeslagenRotatie;
+            
+            if (controller != null) controller.enabled = true;
+
+            // Reset de check zodat hij de volgende keer niet weer verspringt
+            BellInteraction.moetPositieHerstellen = false;
         }
     }
 
