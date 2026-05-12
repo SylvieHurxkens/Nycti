@@ -3,7 +3,12 @@ guid: df904fc9d923f82439032bd371dcbc00
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 11a12f54e1d03344bac99b4a54aa366e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -46,11 +51,7 @@ ModelImporter:
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-<<<<<<< HEAD
-    generateSecondaryUV: 1
-=======
     generateSecondaryUV: 0
->>>>>>> f80d3e51207c2eb8a4b4765e91187ec578e3c753
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
