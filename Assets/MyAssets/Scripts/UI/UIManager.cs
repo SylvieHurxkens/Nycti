@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
     [Header("UI Panels")]
     public GameObject mainMenuPanel;
     public GameObject loadingPanel;
+    public GameObject controlsPanel;
 
     [Header("Buttons")]
     public Button continueButton;
@@ -49,6 +50,26 @@ public class UIManager : MonoBehaviour
             // Laad het opgeslagen level
             SceneManager.LoadScene(levelToLoad);
             Debug.Log("Game hervat in: " + levelToLoad);
+        }
+    }
+
+    public void OpenControls()
+    {
+        if (controlsPanel != null)
+        {
+            controlsPanel.SetActive(true);
+            // Optioneel: zet het hoofdmenu uit als je ze niet over elkaar wilt laten zweven
+            // mainMenuPanel.SetActive(false); 
+        }
+    }
+
+    public void CloseControls()
+    {
+        if (controlsPanel != null)
+        {
+            controlsPanel.SetActive(false);
+            // Vergeet het hoofdmenu niet terug te zetten als je het in OpenControls hebt uitgezet
+            // mainMenuPanel.SetActive(true);
         }
     }
 
