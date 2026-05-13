@@ -14,6 +14,7 @@ public class BellInteraction : MonoBehaviour
     [Header("Speler Opslag")]
     public GameObject speler; 
 
+    // Deze blijven static voor de huidige sessie
     public static Vector3 opgeslagenPositie;
     public static Quaternion opgeslagenRotatie;
     public static bool moetPositieHerstellen = false;
@@ -25,15 +26,19 @@ public class BellInteraction : MonoBehaviour
         if (isGeactiveerd) return;
         isGeactiveerd = true;
 
-        // 1. Sla positie op
+        // 1. Sla positie op voor de huidige sessie
         opgeslagenPositie = speler.transform.position;
         opgeslagenRotatie = speler.transform.rotation;
         moetPositieHerstellen = true;
 
-        // 2. Bel animatie
+        // 2. Sla permanent op dat we kunnen 'Continueren' (voor het menu)
+        PlayerPrefs.SetInt("HeeftSaveGame", 1);
+        PlayerPrefs.Save();
+
+        // 3. Bel animatie
         transform.DOPunchRotation(new Vector3(0, 0, 20f), 0.5f, 10, 1);
 
-        // 3. Behoud faderscherm
+        // 4. Behoud faderscherm
         DontDestroyOnLoad(parentCanvas.gameObject);
 
         // Start het proces
@@ -42,7 +47,6 @@ public class BellInteraction : MonoBehaviour
 
     private void StartEersteOvergang()
     {
-        // We gaan naar de VOLGENDE scene (de kijk-scene)
         int kijkSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
 
         if (kijkSceneIndex < SceneManager.sceneCountInBuildSettings)
@@ -51,10 +55,8 @@ public class BellInteraction : MonoBehaviour
             {
                 SceneManager.LoadScene(kijkSceneIndex);
 
-                // Zodra geladen, fade open
                 fadeImage.DOFade(0f, fadeDuur).SetDelay(0.5f).OnComplete(() =>
                 {
-                    // Wacht de kijktijd
                     DOVirtual.DelayedCall(kijkTijd, () => 
                     {
                         StartTweedeOvergang(kijkSceneIndex + 1);
@@ -66,15 +68,12 @@ public class BellInteraction : MonoBehaviour
 
     private void StartTweedeOvergang(int finaleIndex)
     {
-        // Fade weer naar zwart
         fadeImage.DOFade(1f, fadeDuur).OnComplete(() =>
         {
-            // Controleer of de finale scene bestaat
             if (finaleIndex < SceneManager.sceneCountInBuildSettings)
             {
                 SceneManager.LoadScene(finaleIndex);
                 
-                // Laatste fade-in
                 fadeImage.DOFade(0f, fadeDuur).SetDelay(0.5f).OnComplete(() =>
                 {
                     Destroy(parentCanvas.gameObject);
@@ -82,10 +81,13 @@ public class BellInteraction : MonoBehaviour
             }
             else
             {
-                // Als er GEEN volgende scene is (einde van de game of terug naar 0)
-                Debug.Log("Geen finale scene gevonden, terug naar index 0");
+                Debug.Log("Geen finale scene gevonden, game is uitgespeeld.");
                 
-                // MAAK DE MUIS WEER ZICHTBAAR
+                // Wis de save-status zodat de continu-knop verdwijnt
+                PlayerPrefs.SetInt("HeeftSaveGame", 0);
+                PlayerPrefs.Save();
+                moetPositieHerstellen = false;
+
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
 

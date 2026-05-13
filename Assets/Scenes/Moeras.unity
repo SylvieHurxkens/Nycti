@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boom1 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7958170797264683801, guid: fe2a2be53ddb56f41b53acef1e7c299d, type: 3}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -192,6 +196,10 @@ PrefabInstance:
     - target: {fileID: 390657482113097520, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
       propertyPath: m_Name
       value: Boom4 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 390657482113097520, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
+      propertyPath: m_TagString
+      value: Boom
       objectReference: {fileID: 0}
     - target: {fileID: 1017870989301859722, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -294,6 +302,10 @@ PrefabInstance:
     - target: {fileID: 5343030820671425086, guid: 2909c400ba4e3a349a7257eb0fd50aad, type: 3}
       propertyPath: m_Name
       value: Boom3 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343030820671425086, guid: 2909c400ba4e3a349a7257eb0fd50aad, type: 3}
+      propertyPath: m_TagString
+      value: Boom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -725,6 +737,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boom1 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 7958170797264683801, guid: fe2a2be53ddb56f41b53acef1e7c299d, type: 3}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -746,6 +762,10 @@ PrefabInstance:
     - target: {fileID: 390657482113097520, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
       propertyPath: m_Name
       value: Boom4
+      objectReference: {fileID: 0}
+    - target: {fileID: 390657482113097520, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
+      propertyPath: m_TagString
+      value: Boom
       objectReference: {fileID: 0}
     - target: {fileID: 1017870989301859722, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -849,6 +869,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boom2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2275508423662154692, guid: cc6f61a9cc974934e9f79d5fa5475a55, type: 3}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -911,6 +935,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boom1 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7958170797264683801, guid: fe2a2be53ddb56f41b53acef1e7c299d, type: 3}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -971,6 +999,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4039318793177364871, guid: 03c7040e12406d04d800401547f7d6a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4207393803613820596, guid: 03c7040e12406d04d800401547f7d6a4, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1237,6 +1269,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4207393803613820596, guid: 03c7040e12406d04d800401547f7d6a4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1298,6 +1334,10 @@ PrefabInstance:
     - target: {fileID: 5343030820671425086, guid: 2909c400ba4e3a349a7257eb0fd50aad, type: 3}
       propertyPath: m_Name
       value: Boom3 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343030820671425086, guid: 2909c400ba4e3a349a7257eb0fd50aad, type: 3}
+      propertyPath: m_TagString
+      value: Boom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1361,6 +1401,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boom1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7958170797264683801, guid: fe2a2be53ddb56f41b53acef1e7c299d, type: 3}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1422,6 +1466,10 @@ PrefabInstance:
     - target: {fileID: 7958170797264683801, guid: fe2a2be53ddb56f41b53acef1e7c299d, type: 3}
       propertyPath: m_Name
       value: Boom1 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7958170797264683801, guid: fe2a2be53ddb56f41b53acef1e7c299d, type: 3}
+      propertyPath: m_TagString
+      value: Boom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1485,6 +1533,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boom3 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5343030820671425086, guid: 2909c400ba4e3a349a7257eb0fd50aad, type: 3}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1546,6 +1598,10 @@ PrefabInstance:
     - target: {fileID: 2275508423662154692, guid: cc6f61a9cc974934e9f79d5fa5475a55, type: 3}
       propertyPath: m_Name
       value: Boom2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275508423662154692, guid: cc6f61a9cc974934e9f79d5fa5475a55, type: 3}
+      propertyPath: m_TagString
+      value: Boom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1680,6 +1736,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boom2
       objectReference: {fileID: 0}
+    - target: {fileID: 2275508423662154692, guid: cc6f61a9cc974934e9f79d5fa5475a55, type: 3}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1736,6 +1796,10 @@ PrefabInstance:
     - target: {fileID: 2275508423662154692, guid: cc6f61a9cc974934e9f79d5fa5475a55, type: 3}
       propertyPath: m_Name
       value: Boom2 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275508423662154692, guid: cc6f61a9cc974934e9f79d5fa5475a55, type: 3}
+      propertyPath: m_TagString
+      value: Boom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1798,6 +1862,10 @@ PrefabInstance:
     - target: {fileID: 7958170797264683801, guid: fe2a2be53ddb56f41b53acef1e7c299d, type: 3}
       propertyPath: m_Name
       value: Boom1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7958170797264683801, guid: fe2a2be53ddb56f41b53acef1e7c299d, type: 3}
+      propertyPath: m_TagString
+      value: Boom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2127,6 +2195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boom1
       objectReference: {fileID: 0}
+    - target: {fileID: 7958170797264683801, guid: fe2a2be53ddb56f41b53acef1e7c299d, type: 3}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2188,6 +2260,10 @@ PrefabInstance:
     - target: {fileID: 7958170797264683801, guid: fe2a2be53ddb56f41b53acef1e7c299d, type: 3}
       propertyPath: m_Name
       value: Boom1 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7958170797264683801, guid: fe2a2be53ddb56f41b53acef1e7c299d, type: 3}
+      propertyPath: m_TagString
+      value: Boom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2330,6 +2406,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boom2 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2275508423662154692, guid: cc6f61a9cc974934e9f79d5fa5475a55, type: 3}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2459,6 +2539,10 @@ PrefabInstance:
     - target: {fileID: 7958170797264683801, guid: fe2a2be53ddb56f41b53acef1e7c299d, type: 3}
       propertyPath: m_Name
       value: Boom1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7958170797264683801, guid: fe2a2be53ddb56f41b53acef1e7c299d, type: 3}
+      propertyPath: m_TagString
+      value: Boom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2613,6 +2697,10 @@ PrefabInstance:
     - target: {fileID: 390657482113097520, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
       propertyPath: m_Name
       value: Boom4 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 390657482113097520, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
+      propertyPath: m_TagString
+      value: Boom
       objectReference: {fileID: 0}
     - target: {fileID: 1017870989301859722, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2965,7 +3053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2316285953280388548, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5731643391939505041, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2973,11 +3061,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5731643391939505041, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.73
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5731643391939505041, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 158.3
+      value: 135.78
       objectReference: {fileID: 0}
     - target: {fileID: 5731643391939505041, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3048,12 +3136,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84291a006c5a9c04293cd2bfd81a9a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FootstepGenerator
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1198483479}
   baseStepSpeed: 0.5
   sprintStepSpeed: 0.3
-  grassClips: []
+  DirtClips: []
+  WaterClips: []
+  MudClips: []
   stoneClips: []
   woodClips: []
+  defaultClips: []
 --- !u!1001 &877575283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3105,6 +3196,10 @@ PrefabInstance:
     - target: {fileID: 2275508423662154692, guid: cc6f61a9cc974934e9f79d5fa5475a55, type: 3}
       propertyPath: m_Name
       value: Boom2 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275508423662154692, guid: cc6f61a9cc974934e9f79d5fa5475a55, type: 3}
+      propertyPath: m_TagString
+      value: Boom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3172,6 +3267,10 @@ PrefabInstance:
     - target: {fileID: 5343030820671425086, guid: 2909c400ba4e3a349a7257eb0fd50aad, type: 3}
       propertyPath: m_Name
       value: Boom3 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343030820671425086, guid: 2909c400ba4e3a349a7257eb0fd50aad, type: 3}
+      propertyPath: m_TagString
+      value: Boom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3488,7 +3587,7 @@ Transform:
   m_GameObject: {fileID: 948503276}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.38, y: 6.36, z: 158.3}
+  m_LocalPosition: {x: -0.38, y: 3.63, z: 135.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3657,6 +3756,10 @@ PrefabInstance:
     - target: {fileID: 2275508423662154692, guid: cc6f61a9cc974934e9f79d5fa5475a55, type: 3}
       propertyPath: m_Name
       value: Boom2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275508423662154692, guid: cc6f61a9cc974934e9f79d5fa5475a55, type: 3}
+      propertyPath: m_TagString
+      value: Boom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3979,6 +4082,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4039318793177364871, guid: 03c7040e12406d04d800401547f7d6a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4207393803613820596, guid: 03c7040e12406d04d800401547f7d6a4, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4305,6 +4412,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boom2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2275508423662154692, guid: cc6f61a9cc974934e9f79d5fa5475a55, type: 3}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4367,6 +4478,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boom3 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5343030820671425086, guid: 2909c400ba4e3a349a7257eb0fd50aad, type: 3}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4428,6 +4543,10 @@ PrefabInstance:
     - target: {fileID: 7958170797264683801, guid: fe2a2be53ddb56f41b53acef1e7c299d, type: 3}
       propertyPath: m_Name
       value: Boom1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7958170797264683801, guid: fe2a2be53ddb56f41b53acef1e7c299d, type: 3}
+      propertyPath: m_TagString
+      value: Boom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4722,6 +4841,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boom4 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 390657482113097520, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
     - target: {fileID: 1017870989301859722, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.737881
@@ -4824,6 +4947,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boom3
       objectReference: {fileID: 0}
+    - target: {fileID: 5343030820671425086, guid: 2909c400ba4e3a349a7257eb0fd50aad, type: 3}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4880,6 +5007,10 @@ PrefabInstance:
     - target: {fileID: 5343030820671425086, guid: 2909c400ba4e3a349a7257eb0fd50aad, type: 3}
       propertyPath: m_Name
       value: Boom3 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343030820671425086, guid: 2909c400ba4e3a349a7257eb0fd50aad, type: 3}
+      propertyPath: m_TagString
+      value: Boom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4942,6 +5073,10 @@ PrefabInstance:
     - target: {fileID: 2275508423662154692, guid: cc6f61a9cc974934e9f79d5fa5475a55, type: 3}
       propertyPath: m_Name
       value: Boom2 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275508423662154692, guid: cc6f61a9cc974934e9f79d5fa5475a55, type: 3}
+      propertyPath: m_TagString
+      value: Boom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5311,6 +5446,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boom3 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5343030820671425086, guid: 2909c400ba4e3a349a7257eb0fd50aad, type: 3}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5510,6 +5649,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4207393803613820596, guid: 03c7040e12406d04d800401547f7d6a4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5570,6 +5713,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4039318793177364871, guid: 03c7040e12406d04d800401547f7d6a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4207393803613820596, guid: 03c7040e12406d04d800401547f7d6a4, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5634,6 +5781,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boom2 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2275508423662154692, guid: cc6f61a9cc974934e9f79d5fa5475a55, type: 3}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5655,6 +5806,10 @@ PrefabInstance:
     - target: {fileID: 390657482113097520, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
       propertyPath: m_Name
       value: Boom4 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 390657482113097520, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
+      propertyPath: m_TagString
+      value: Boom
       objectReference: {fileID: 0}
     - target: {fileID: 1017870989301859722, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5793,6 +5948,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boom4 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 390657482113097520, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
     - target: {fileID: 1017870989301859722, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -56.904427
@@ -5855,6 +6014,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boom4 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 390657482113097520, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
     - target: {fileID: 1017870989301859722, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.693527
@@ -5916,6 +6079,10 @@ PrefabInstance:
     - target: {fileID: 390657482113097520, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
       propertyPath: m_Name
       value: Boom4 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 390657482113097520, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
+      propertyPath: m_TagString
+      value: Boom
       objectReference: {fileID: 0}
     - target: {fileID: 1017870989301859722, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6017,6 +6184,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4039318793177364871, guid: 03c7040e12406d04d800401547f7d6a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4207393803613820596, guid: 03c7040e12406d04d800401547f7d6a4, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6422,6 +6593,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4207393803613820596, guid: 03c7040e12406d04d800401547f7d6a4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6482,6 +6657,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4039318793177364871, guid: 03c7040e12406d04d800401547f7d6a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4207393803613820596, guid: 03c7040e12406d04d800401547f7d6a4, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6678,6 +6857,10 @@ PrefabInstance:
     - target: {fileID: 5343030820671425086, guid: 2909c400ba4e3a349a7257eb0fd50aad, type: 3}
       propertyPath: m_Name
       value: Boom3 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343030820671425086, guid: 2909c400ba4e3a349a7257eb0fd50aad, type: 3}
+      propertyPath: m_TagString
+      value: Boom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6889,6 +7072,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boom4 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 390657482113097520, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
     - target: {fileID: 1017870989301859722, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 72.45656
@@ -6991,6 +7178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boom3 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5343030820671425086, guid: 2909c400ba4e3a349a7257eb0fd50aad, type: 3}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7089,6 +7280,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boom1 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7958170797264683801, guid: fe2a2be53ddb56f41b53acef1e7c299d, type: 3}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7150,6 +7345,10 @@ PrefabInstance:
     - target: {fileID: 7958170797264683801, guid: fe2a2be53ddb56f41b53acef1e7c299d, type: 3}
       propertyPath: m_Name
       value: Boom1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7958170797264683801, guid: fe2a2be53ddb56f41b53acef1e7c299d, type: 3}
+      propertyPath: m_TagString
+      value: Boom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7292,6 +7491,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4207393803613820596, guid: 03c7040e12406d04d800401547f7d6a4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7313,6 +7516,10 @@ PrefabInstance:
     - target: {fileID: 390657482113097520, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
       propertyPath: m_Name
       value: Boom4
+      objectReference: {fileID: 0}
+    - target: {fileID: 390657482113097520, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
+      propertyPath: m_TagString
+      value: Boom
       objectReference: {fileID: 0}
     - target: {fileID: 1017870989301859722, guid: 1e0c64e08a99e43438ddf8f030ada2b4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7548,6 +7755,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boom3
       objectReference: {fileID: 0}
+    - target: {fileID: 5343030820671425086, guid: 2909c400ba4e3a349a7257eb0fd50aad, type: 3}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7573,7 +7784,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2028712407
 Transform:
   m_ObjectHideFlags: 0
@@ -7652,6 +7863,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4207393803613820596, guid: 03c7040e12406d04d800401547f7d6a4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7719,6 +7934,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boom3 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 5343030820671425086, guid: 2909c400ba4e3a349a7257eb0fd50aad, type: 3}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7737,10 +7956,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2140881211619280276, guid: 6507ad4595eed3e4b9764a13a5906166, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2140881211619280276, guid: 6507ad4595eed3e4b9764a13a5906166, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914050315090627005, guid: 6507ad4595eed3e4b9764a13a5906166, type: 3}
+      propertyPath: m_Name
+      value: WaterGrond
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914050315090627005, guid: 6507ad4595eed3e4b9764a13a5906166, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914050315090627005, guid: 6507ad4595eed3e4b9764a13a5906166, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 3167702986155920173, guid: 6507ad4595eed3e4b9764a13a5906166, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 11a12f54e1d03344bac99b4a54aa366e, type: 2}
+    - target: {fileID: 4239440882223465778, guid: 6507ad4595eed3e4b9764a13a5906166, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4503173596063210882, guid: 6507ad4595eed3e4b9764a13a5906166, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -7848,6 +8091,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4039318793177364871, guid: 03c7040e12406d04d800401547f7d6a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4207393803613820596, guid: 03c7040e12406d04d800401547f7d6a4, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6328456357891286271, guid: 03c7040e12406d04d800401547f7d6a4, type: 3}
@@ -8006,6 +8253,6 @@ SceneRoots:
   - {fileID: 1112125086}
   - {fileID: 550223121}
   - {fileID: 1753403019}
-  - {fileID: 743833716}
   - {fileID: 1938263292}
+  - {fileID: 743833716}
   - {fileID: 1848296309}

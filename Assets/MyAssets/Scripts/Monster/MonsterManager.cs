@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MonsterManager : MonoBehaviour
 {
@@ -46,23 +47,61 @@ public class MonsterManager : MonoBehaviour
 
     void MoveMonster()
     {
-    // Kiest een willekeurige plek rondom de speler op de X en Z as
-    Vector3 randomDir = Random.insideUnitSphere * spawnDistance;
-    Vector3 checkPos = player.position + randomDir;
-    checkPos.y = 100f; // Zet de startpositie van de "laser" hoog in de lucht
-
-    RaycastHit hit; // Schiet een Raycast
-
-    if (Physics.Raycast(checkPos, Vector3.down, out hit, 200f, groundLayer))
+        // 1. Kies een willekeurige positie rondom de speler
+        Vector3 randomDir = Random.insideUnitSphere * spawnDistance;
+        Vector3 spawnPos = player.position + randomDir;
+        
+        RaycastHit groundHit;
+        // We schieten eerst omlaag om de grond te vinden
+        if (Physics.Raycast(new Vector3(spawnPos.x, 100f, spawnPos.z), Vector3.down, out groundHit, 200f, groundLayer))
         {
-            // Verplaats het bestaande monster naar de nieuwe plek
-            activeMonster.transform.position = hit.point + new Vector3(0, 0, 0);
-             
-            activeMonster.SetActive(true);
+            Vector3 finalPos = groundHit.point + new Vector3(0, 0f, 0);
 
-            Debug.Log("Het monster is verplaatst naar de buurt van de speler!");
+            // --- DE DAK CHECK ---
+            RaycastHit ceilingHit;
+            bool isBinnen = false;
+
+            // Schiet een straal van 20 meter recht omhoog (Vector3.up)
+            if (Physics.Raycast(finalPos, Vector3.up, out ceilingHit, 20f))
+            {
+                // Check of het object boven ons de tag "Dak" heeft
+                if (ceilingHit.collider.CompareTag("Dak"))
+                {
+                    isBinnen = true;
+                    Debug.Log("Spawn geannuleerd: Er zit een dak boven deze plek.");
+                }
+            }
+
+            // --- DE MUUR CHECK (OverlapSphere) ---
+            // We checken ook nog even of we niet half IN een muur staan
+            Collider[] hitColliders = Physics.OverlapSphere(finalPos, 1.2f);
+            bool raaktMuur = false;
+            foreach (var col in hitColliders)
+            {
+                if (col.CompareTag("Muur"))
+                {
+                    raaktMuur = true;
+                    break;
+                }
+            }
+
+            // 2. Alleen spawnen als we NIET binnen zijn en GEEN muur raken
+            if (!isBinnen && !raaktMuur)
+            {
+                // Verplaats het monster
+                activeMonster.transform.position = finalPos;
+                activeMonster.SetActive(true);
+                Debug.Log("Monster succesvol buiten gespawned!");
+            }
         }
-}
+
+        Invoke("HideMonster", 5f);
+    }
+    
+    void HideMonster() 
+    {
+    activeMonster.SetActive(false);
+    }
 
     #region Safe zone logica
     private void OnTriggerEnter(Collider col)

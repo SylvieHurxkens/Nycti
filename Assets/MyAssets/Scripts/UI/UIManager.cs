@@ -14,44 +14,59 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        // Controleer bij het opstarten of er al een save bestaat
-        if (continueButton != null)
-        {
-            // Als er geen save is, maak de knop grijs/niet klikbaar
-            continueButton.interactable = PlayerPrefs.HasKey("SavedLevel");
-        }
+        // We controleren of de knop grijs moet zijn
+        UpdateButtonStatus();
 
         // Zorg dat het laadscherm uit staat bij het opstarten van de UI
         if (loadingPanel != null)
         {
             loadingPanel.SetActive(false);
         }
+    }  
+
+    private void UpdateButtonStatus()
+    {
+        if (continueButton != null)
+        {
+            // We kijken naar TWEE dingen:
+            // 1. Is er een opgeslagen level? (PlayerPrefs)
+            // 2. Is de game niet net beëindigd? (HeeftSaveGame uit BellInteraction)
+            
+            bool heeftSave = PlayerPrefs.HasKey("SavedLevel") && PlayerPrefs.GetInt("HeeftSaveGame", 0) == 1;
+
+            if (heeftSave)
+            {
+                continueButton.interactable = true;  // Knop is normaal
+            }
+            else
+            {
+                continueButton.interactable = false; // Knop wordt grijs en onklikbaar
+            }
+        }
     }
 
     public void NewGame()
     {
+        // Als je een nieuwe game start, zorgen we dat de continue knop daarna weer werkt
         PlayerPrefs.DeleteKey("SavedLevel");
-
-        ShowLoadingScreen();
+        PlayerPrefs.SetInt("HeeftSaveGame", 1); 
+        PlayerPrefs.Save();
         
         // Laden level op basis van het getal in de Build Settings
+        ShowLoadingScreen();
         SceneManager.LoadScene(1);
         Debug.Log("De game start vanaf level 1!");
     }
     
     public void ContinueGame()
-    {
-        if (PlayerPrefs.HasKey("SavedLevel"))
         {
-            string levelToLoad = PlayerPrefs.GetString("SavedLevel");
-            
-            ShowLoadingScreen();
-            
-            // Laad het opgeslagen level
-            SceneManager.LoadScene(levelToLoad);
-            Debug.Log("Game hervat in: " + levelToLoad);
+            if (PlayerPrefs.HasKey("SavedLevel"))
+            {
+                string levelToLoad = PlayerPrefs.GetString("SavedLevel");
+                ShowLoadingScreen();
+                SceneManager.LoadScene(levelToLoad);
+            }
         }
-    }
 
     public void OpenControls()
     {

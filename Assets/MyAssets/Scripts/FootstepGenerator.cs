@@ -7,13 +7,16 @@ public class FootstepGenerator : MonoBehaviour
     public float baseStepSpeed = 0.5f; 
     public float sprintStepSpeed = 0.3f; 
     
-    [Header("Geluiden")]
-    public AudioClip[] grassClips;
-    public AudioClip[] stoneClips;
-    public AudioClip[] woodClips;
+    [Header("Geluiden per Layer")]
+    public AudioClip[] DirtClips;
+    public AudioClip[] WaterClips;
+    public AudioClip[] MudClips;
+    public AudioClip[] StoneClips;
+    public AudioClip[] WoodClips;
+    public AudioClip[] defaultClips; 
 
     private float footstepTimer = 0f;
-    private CharacterController controller; 
+    private CharacterController controller;
 
     void Start()
     {
@@ -22,56 +25,63 @@ public class FootstepGenerator : MonoBehaviour
 
     void Update()
     {
-        // Controleer of de speler op de grond staat en beweegt
+        // Check of we bewegen en op de grond staan
         if (controller.isGrounded && controller.velocity.magnitude > 0.1f)
         {
-            DetermineStepSpeed();
-        }
-    }
+            float currentStepInterval = (Input.GetKey(KeyCode.LeftShift)) ? sprintStepSpeed : baseStepSpeed;
 
-    void DetermineStepSpeed()
-    {
-        // Pas de snelheid van de voetstappen aan op basis van sprintsnelheid
-        float currentStepInterval = (Input.GetKey(KeyCode.LeftShift)) ? sprintStepSpeed : baseStepSpeed;
+            footstepTimer -= Time.deltaTime;
 
-        footstepTimer -= Time.deltaTime;
-
-        if (footstepTimer <= 0)
-       {
-           PlayFootstepSound();
-            footstepTimer = currentStepInterval;
+            if (footstepTimer <= 0)
+            {
+                PlayFootstepSound();
+                footstepTimer = currentStepInterval;
+            }
         }
     }
 
     void PlayFootstepSound()
     {
         RaycastHit hit;
-        
+        // Straal naar beneden om de layer te detecteren
         if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.5f))
         {
-            AudioClip[] selectedClips = default;
+            int layerIndex = hit.collider.gameObject.layer;
+            string layerName = LayerMask.LayerToName(layerIndex);
 
-            
-            switch (hit.collider.tag)
+            // Kies de juiste lijst met geluiden op basis van de Layer naam
+            switch (layerName)
             {
-                case "Grass":
-                    selectedClips = grassClips;
+                case "Dirt":
+                    PlayRandomClip(DirtClips);
+                    break;
+                case "Water":
+                    PlayRandomClip(WaterClips);
+                    break;
+                case "Mud":
+                    PlayRandomClip(MudClips);
                     break;
                 case "Stone":
-                    selectedClips = stoneClips;
+                    PlayRandomClip(StoneClips);
                     break;
                 case "Wood":
-                    selectedClips = woodClips;
+                    PlayRandomClip(WoodClips);
+                    break;
+                default:
+                    PlayRandomClip(defaultClips);
                     break;
             }
+        }
+    }
 
-            if (selectedClips != null && selectedClips.Length > 0)
-            {
-                // Kies een random clip en varieer de pitch een beetje (voor realisme)
-                int index = Random.Range(0, selectedClips.Length);
-                audioSource.pitch = Random.Range(0.85f, 1.15f); 
-                audioSource.PlayOneShot(selectedClips[index]);
-            }
+    // Handige functie om herhaling te voorkomen
+    void PlayRandomClip(AudioClip[] clips)
+    {
+        if (clips != null && clips.Length > 0)
+        {
+            int index = Random.Range(0, clips.Length);
+            audioSource.pitch = Random.Range(0.9f, 1.1f);
+            audioSource.PlayOneShot(clips[index]);
         }
     }
 }
