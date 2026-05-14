@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class FootstepGenerator : MonoBehaviour
 {
-    [Header("Instellingen")]
+    [Header("Referenties")]
+    public PlayerController playerController; 
     public AudioSource audioSource;
+
+    [Header("Instellingen")]
     public float baseStepSpeed = 0.5f; 
     public float sprintStepSpeed = 0.3f; 
     
@@ -13,43 +16,48 @@ public class FootstepGenerator : MonoBehaviour
     public AudioClip[] MudClips;
     public AudioClip[] StoneClips;
     public AudioClip[] WoodClips;
-    public AudioClip[] defaultClips; 
+    public AudioClip[] defaultClips;
 
     private float footstepTimer = 0f;
-    private CharacterController controller;
-
-    void Start()
-    {
-        controller = GetComponent<CharacterController>();
-    }
 
     void Update()
     {
-        // Check of we bewegen en op de grond staan
-        if (controller.isGrounded && controller.velocity.magnitude > 0.1f)
-        {
-            float currentStepInterval = (Input.GetKey(KeyCode.LeftShift)) ? sprintStepSpeed : baseStepSpeed;
+        // 1. Check of de speler een toets indrukt (moveInput) en op de grond staat
+        // We gebruiken een kleine 'deadzone' van 0.1 om 'random' geluid bij stilstaan te voorkomen
+        bool isMoving = playerController.CurrentMoveInput.magnitude > 0.1f;
+        bool isGrounded = playerController.controller.isGrounded;
 
+        if (isGrounded && isMoving)
+        {
+            // 2. Bepaal de snelheid van de stappen
+            float currentStepInterval = (playerController.IsSprintingPublic) ? sprintStepSpeed : baseStepSpeed;
+
+            // 3. Tel af
             footstepTimer -= Time.deltaTime;
 
             if (footstepTimer <= 0)
             {
                 PlayFootstepSound();
-                footstepTimer = currentStepInterval;
+                footstepTimer = currentStepInterval; // Reset naar het interval
             }
+        }
+        else
+        {
+            // 4. Als we stilstaan, zetten we de timer bijna op nul (zodat de eerste stap direct klinkt)
+            // maar niet helemaal op nul, om herhaling te voorkomen.
+            footstepTimer = 0.05f; 
         }
     }
 
     void PlayFootstepSound()
     {
         RaycastHit hit;
-        // Straal naar beneden om de layer te detecteren
+        // Raycast naar beneden om de layer te vinden
         if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.5f))
         {
-            int layerIndex = hit.collider.gameObject.layer;
-            string layerName = LayerMask.LayerToName(layerIndex);
+            string layerName = LayerMask.LayerToName(hit.collider.gameObject.layer);
 
-            // Kies de juiste lijst met geluiden op basis van de Layer naam
+            // Jouw switch-structuur:
             switch (layerName)
             {
                 case "Dirt":
@@ -74,7 +82,6 @@ public class FootstepGenerator : MonoBehaviour
         }
     }
 
-    // Handige functie om herhaling te voorkomen
     void PlayRandomClip(AudioClip[] clips)
     {
         if (clips != null && clips.Length > 0)

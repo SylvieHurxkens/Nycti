@@ -21,6 +21,10 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private bool isSprinting;
 
+    // Dit geeft de FootstepGenerator toestemming om te zien of isSprinting aan staat
+    public bool IsSprintingPublic => isSprinting;
+    public Vector2 CurrentMoveInput => moveInput;
+
     // Wordt aangeroepen door de Move actie
     public void OnMove(InputValue context)
     {

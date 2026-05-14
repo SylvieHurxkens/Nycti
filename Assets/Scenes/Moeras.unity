@@ -3051,6 +3051,54 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1806180236696611633, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1433658141}
+    - target: {fileID: 1806180236696611633, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
+      propertyPath: MudClips.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1806180236696611633, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
+      propertyPath: WaterClips.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1806180236696611633, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
+      propertyPath: 'MudClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: a62ecb39e14dc6c44808fa3b72943c59, type: 3}
+    - target: {fileID: 1806180236696611633, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
+      propertyPath: 'MudClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 3ff11ce596866064389d6b071a654f7e, type: 3}
+    - target: {fileID: 1806180236696611633, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
+      propertyPath: 'MudClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 14701641798f1f34ba5791e99c040269, type: 3}
+    - target: {fileID: 1806180236696611633, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
+      propertyPath: 'MudClips.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 2edde96d1d5eaee4b9a01c9dac9ff26a, type: 3}
+    - target: {fileID: 1806180236696611633, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
+      propertyPath: 'WaterClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 9159b2a4285bb9c4cb18758f338f957f, type: 3}
+    - target: {fileID: 1806180236696611633, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
+      propertyPath: 'WaterClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 146a721ec0a85cf42805d13edc7c65b3, type: 3}
+    - target: {fileID: 1806180236696611633, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
+      propertyPath: 'WaterClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 337e0c88e7a532f4dbaad7b29889574b, type: 3}
+    - target: {fileID: 1806180236696611633, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
+      propertyPath: 'WaterClips.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 919e23a4c58713543b9e2c2faf1213df, type: 3}
+    - target: {fileID: 1806180236696611633, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
+      propertyPath: 'WaterClips.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7eeb14b713c783a4385c6a1c87265461, type: 3}
     - target: {fileID: 2316285953280388548, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -3105,46 +3153,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4135084607563245908, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1198483478}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5397767179224138360, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 806896324}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
 --- !u!4 &806896322 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4135084607563245908, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
   m_PrefabInstance: {fileID: 806896321}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &806896323 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5397767179224138360, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
-  m_PrefabInstance: {fileID: 806896321}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &806896324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 806896323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84291a006c5a9c04293cd2bfd81a9a71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FootstepGenerator
-  audioSource: {fileID: 1198483479}
-  baseStepSpeed: 0.5
-  sprintStepSpeed: 0.3
-  DirtClips: []
-  WaterClips: []
-  MudClips: []
-  stoneClips: []
-  woodClips: []
-  defaultClips: []
 --- !u!1001 &877575283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4098,135 +4114,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4039318793177364871, guid: 03c7040e12406d04d800401547f7d6a4, type: 3}
   m_PrefabInstance: {fileID: 1132099831}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1198483477
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1198483478}
-  - component: {fileID: 1198483479}
-  m_Layer: 3
-  m_Name: Audio Source
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1198483478
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1198483477}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 806896322}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1198483479
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1198483477}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &1215699088
 GameObject:
   m_ObjectHideFlags: 0
@@ -5021,6 +4908,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4714585556001345668, guid: 2909c400ba4e3a349a7257eb0fd50aad, type: 3}
   m_PrefabInstance: {fileID: 1392715091}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1433658141 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1208040690923736854, guid: 0c708a74d9c48994391c42f1cc3cbb78, type: 3}
+  m_PrefabInstance: {fileID: 806896321}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1497348106
 PrefabInstance:
