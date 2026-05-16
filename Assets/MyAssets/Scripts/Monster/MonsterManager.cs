@@ -1,14 +1,19 @@
 using UnityEngine;
-using UnityEngine.AI;
+using System.Collections;
 
 public class MonsterManager : MonoBehaviour
 {
+    [Header("Geluid")]
+    public AudioSource audioSource; 
+    public AudioClip[] waarschuwingGeluiden;
+    public float vertragingTijd = 3f; 
+
     [Header("Instellingen")]
     public GameObject monsterPrefab;
     public Transform player;
-    public float spawnInterval = 10f; // Check elke 10 seconden
+    [Range(0, 100)] public float spawnKans = 25f; 
+    public float spawnInterval = 10f; 
     public float spawnDistance = 20f;
-    public LayerMask groundLayer;
 
     private GameObject activeMonster;
     private bool isPlayerSafe = false;
@@ -16,15 +21,14 @@ public class MonsterManager : MonoBehaviour
 
     void Start()
     {
-        activeMonster = Instantiate(monsterPrefab); //maakt monster aan bij de start
-        activeMonster.SetActive(false); // Zet monster uit
+        activeMonster = Instantiate(monsterPrefab); 
+        activeMonster.SetActive(false); 
     }
 
     void Update()
     {
-        if (player == null) return; // Stop als er geen speler is gevonden
+        if (player == null) return; 
 
-        // De timer loopt alleen als de speler NIET veilig is
         if (!isPlayerSafe)
         {
             timer += Time.deltaTime;
@@ -39,88 +43,93 @@ public class MonsterManager : MonoBehaviour
     void TrySpawnMonster()
     {
         float kans = Random.Range(0, 100);
-        if (kans < 25) // 25% kans
+        if (kans < spawnKans) 
         {
-            MoveMonster();
+            StartCoroutine(MonsterAankondigingSequence());
         }
     }
 
-    void MoveMonster()
+    IEnumerator MonsterAankondigingSequence()
     {
-        // 1. Kies een willekeurige positie rondom de speler
-        Vector3 randomDir = Random.insideUnitSphere * spawnDistance;
-        Vector3 spawnPos = player.position + randomDir;
-        
+        Debug.Log("Sequence is gestart! Er is een succesvolle kans gerold.");
+
+        Vector3 spawnPos = player.position + (Random.insideUnitSphere * spawnDistance);
         RaycastHit groundHit;
-        // We schieten eerst omlaag om de grond te vinden
-        if (Physics.Raycast(new Vector3(spawnPos.x, 100f, spawnPos.z), Vector3.down, out groundHit, 200f, groundLayer))
+        
+        // We schieten nu een algemene raycast omlaag (zonder layer filter)
+        if (Physics.Raycast(new Vector3(spawnPos.x, 500f, spawnPos.z), Vector3.down, out groundHit, 1000f))
         {
-            Vector3 finalPos = groundHit.point + new Vector3(0, 0f, 0);
-
-            // --- DE DAK CHECK ---
-            RaycastHit ceilingHit;
-            bool isBinnen = false;
-
-            // Schiet een straal van 20 meter recht omhoog (Vector3.up)
-            if (Physics.Raycast(finalPos, Vector3.up, out ceilingHit, 20f))
+            // NU CHECKEN WE DE TAG: Is het object dat we raken wel echt de grond?
+            if (groundHit.collider.CompareTag("Ground"))
             {
-                // Check of het object boven ons de tag "Dak" heeft
-                if (ceilingHit.collider.CompareTag("Dak"))
+                Vector3 finalPos = groundHit.point + new Vector3(0, 0f, 0);
+
+                if (CheckPlekVrij(finalPos)) 
                 {
-                    isBinnen = true;
-                    Debug.Log("Spawn geannuleerd: Er zit een dak boven deze plek.");
+                    Debug.Log("De plek is VRIJ! Geluid gaat spelen.");
+                    activeMonster.SetActive(false);
+
+                    if (waarschuwingGeluiden.Length > 0)
+                    {
+                        int randomIndex = Random.Range(0, waarschuwingGeluiden.Length);
+                        AudioClip gekozenGeluid = waarschuwingGeluiden[randomIndex];
+                        AudioSource.PlayClipAtPoint(gekozenGeluid, finalPos);
+                    }
+
+                    yield return new WaitForSeconds(vertragingTijd);
+
+                    activeMonster.transform.position = finalPos;
+                    activeMonster.SetActive(true);
+                    Debug.Log("Monster is NU geactiveerd op positie: " + finalPos);
+
+                    yield return new WaitForSeconds(5f);
+
+                    activeMonster.SetActive(false);
+                    Debug.Log("Monster is weer opgeruimd.");
+                }
+                else
+                {
+                    Debug.Log("Spawn geannuleerd: CheckPlekVrij gaf FALSE terug (muur of dak geraakt).");
                 }
             }
-
-            // --- DE MUUR CHECK (OverlapSphere) ---
-            // We checken ook nog even of we niet half IN een muur staan
-            Collider[] hitColliders = Physics.OverlapSphere(finalPos, 1.2f);
-            bool raaktMuur = false;
-            foreach (var col in hitColliders)
+            else
             {
-                if (col.CompareTag("Muur"))
-                {
-                    raaktMuur = true;
-                    break;
-                }
-            }
-
-            // 2. Alleen spawnen als we NIET binnen zijn en GEEN muur raken
-            if (!isBinnen && !raaktMuur)
-            {
-                // Verplaats het monster
-                activeMonster.transform.position = finalPos;
-                activeMonster.SetActive(true);
-                Debug.Log("Monster succesvol buiten gespawned!");
+                Debug.Log("Spawn geannuleerd: De laser raakte iets, maar het had NIET de tag 'Ground'. Het raakte: " + groundHit.collider.name);
             }
         }
-
-        Invoke("HideMonster", 5f);
+        else
+        {
+            Debug.Log("Spawn geannuleerd: De laser heeft helemaal niets geraakt in de leegte.");
+        }
     }
-    
-    void HideMonster() 
+
+    bool CheckPlekVrij(Vector3 plek)
     {
-    activeMonster.SetActive(false);
+        // Dak check
+        RaycastHit hit;
+        if (Physics.Raycast(plek, Vector3.up, out hit, 20f))
+        {
+            if (hit.collider.CompareTag("Dak")) return false;
+        }
+        
+        // Muur check
+        Collider[] hitColliders = Physics.OverlapSphere(plek, 1.2f);
+        foreach (var col in hitColliders)
+        {
+            if (col.CompareTag("Muur")) return false;
+        }
+        return true;
     }
 
     #region Safe zone logica
     private void OnTriggerEnter(Collider col)
     {
-        if (col.CompareTag("SafeZone"))
-        {
-            isPlayerSafe = true;
-            Debug.Log("Speler is nu VEILIG");
-        }
+        if (col.CompareTag("SafeZone")) isPlayerSafe = true;
     }
 
     private void OnTriggerExit(Collider col)
     {
-        if (col.CompareTag("SafeZone"))
-        {
-            isPlayerSafe = false;
-            Debug.Log("Speler is nu NIET meer veilig");
-        }
+        if (col.CompareTag("SafeZone")) isPlayerSafe = false;
     }
     #endregion
-
 }
